@@ -1,9 +1,30 @@
 .textarea {
   height: 100px;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.result {
+  text-align: center;
+}
+
+.button {
+  height: auto;
+  width: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20vw 20vw;
+  grid-template-rows: auto auto auto auto;
+  gap: 30px;
+  height: 30px;
 }
 
 .flex-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
-
+.heading {
+  text-align: center;
+}
