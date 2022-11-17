@@ -59,7 +59,7 @@ const onLoad = () => {
       let letters = getKeyByValue(dictionary, value);
       arrString.push(letters);
     }
-    console.log(arrString.join(" "));
+    return arrString.join(" ");
   };
 
   const morseCodeToText = (input) => {
@@ -71,7 +71,7 @@ const onLoad = () => {
       arrString.push(letters);
       // console.log(key);
     }
-    console.log(arrString.join(""));
+    return arrString.join("");
   };
 
   const clearText = () => {
@@ -99,17 +99,19 @@ const onLoad = () => {
   const textInput = document.getElementById("textInput");
   const textResult = document.getElementById("textResult");
   const morseCodeInput = document.getElementById("morseCodeInput");
-  const morseResult = document.getElementById("textResult");
+  const morseResult = document.getElementById("morseResult");
 
   translateTextButton.addEventListener("click", () => {
-    // console.log("translate");
-    textToMorse(textInput.value);
+    console.log("translate");
+    console.log(textInput.value);
+    textResult.value = textToMorse(textInput.value);
     clearText();
   });
 
   translateMorseButton.addEventListener("click", () => {
-    // console.log("translate");
-    morseCodeToText(morseCodeInput.value);
+    console.log("translate");
+    console.log(morseCodeInput.value);
+    morseResult.value = morseCodeToText(morseCodeInput.value);
     clearText();
   });
 };
