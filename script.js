@@ -1,5 +1,4 @@
 const onLoad = () => {
-  // console.log("hello there");
 
   const dictionary = {
     "-----": "0",
@@ -49,10 +48,8 @@ const onLoad = () => {
   };
 
   const textToMorse = (input) => {
-    //convert to array with single letters and empty string for space.
     let arrChar = input.split("");
     let arrString = [];
-    //convert characters into morse by matching key to value
 
     for (let i = 0; i < arrChar.length; i++) {
       let value = arrChar[i];
@@ -69,7 +66,6 @@ const onLoad = () => {
       let key = arrChar[i];
       let letters = dictionary[key];
       arrString.push(letters);
-      // console.log(key);
     }
     return arrString.join("");
   };
@@ -79,21 +75,6 @@ const onLoad = () => {
     morseCodeInput.value = "";
   };
 
-  // const translate = () => {
-  //     if (textInput.value == "" && morseCodeInput.value == "") {
-  //         console.log("error, please enter something");
-  //     } else if (textInput.value !== "" && morseCodeInput.value !== "") {
-  //         console.log("error, please only enter in one input");
-  //     } else if (textInput.value !== "") {
-  //         console.log(textValue);
-  //     } else {
-  //         console.log(morseCodeValue);
-  //     }
-  // };
-
-  // textToMorse("hello string");
-  // morseCodeToText(".... . .-.. .-.. --- / - .... . .-. .");
-
   const translateTextButton = document.getElementById("translateText");
   const translateMorseButton = document.getElementById("translateMorse");
   const textInput = document.getElementById("textInput");
@@ -102,15 +83,11 @@ const onLoad = () => {
   const morseResult = document.getElementById("morseResult");
 
   translateTextButton.addEventListener("click", () => {
-    console.log("translate");
-    console.log(textInput.value);
     textResult.value = textToMorse(textInput.value);
     clearText();
   });
 
   translateMorseButton.addEventListener("click", () => {
-    console.log("translate");
-    console.log(morseCodeInput.value);
     morseResult.value = morseCodeToText(morseCodeInput.value);
     clearText();
   });
